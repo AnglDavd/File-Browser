@@ -6,9 +6,9 @@ services:
       - GID=1000
       - TZ=America/Santiago
     ports:
-      - 1015:8080
+      - 6005:8080
     volumes:
-      - /media/ainu/Marjorie:/data
+      - /media/ruta/disco:/data
       - ./fb-config:/config
     restart: unless-stopped
 networks: {}
