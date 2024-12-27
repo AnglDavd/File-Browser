@@ -1,0 +1,14 @@
+services:
+  filebrowser:
+    image: hurlenko/filebrowser:latest
+    environment:
+      - UID=1000
+      - GID=1000
+      - TZ=America/Santiago
+    ports:
+      - 1015:8080
+    volumes:
+      - /media/ainu/Marjorie:/data
+      - ./fb-config:/config
+    restart: unless-stopped
+networks: {}
