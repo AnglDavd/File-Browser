@@ -1,4 +1,4 @@
-version: '3.8'  # Asegúrate de usar una versión compatible con Docker Swarm
+version: '3.8'
 services:
   filebrowser:
     image: hurlenko/filebrowser:latest
