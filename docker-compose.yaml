@@ -1,3 +1,4 @@
+version: '3.8'  # Asegúrate de usar una versión compatible con Docker Swarm
 services:
   filebrowser:
     image: hurlenko/filebrowser:latest
@@ -10,5 +11,8 @@ services:
     volumes:
       - /media/ruta/disco:/data
       - ./fb-config:/config
-    restart: unless-stopped
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
 networks: {}
