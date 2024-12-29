@@ -11,7 +11,7 @@ services:
       - /media/ruta/disco:/data
       - ./fb-config:/config
     deploy:
-      replicas: 3
+      replicas: 2
       restart_policy:
         condition: on-failure
         delay: 5s
