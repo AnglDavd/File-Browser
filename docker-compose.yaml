@@ -11,7 +11,11 @@ services:
       - /media/ruta/disco:/data
       - ./fb-config:/config
     deploy:
+      mode: replicated
       replicas: 2
+      placement:
+        constraints:
+          - node.role == worker
       restart_policy:
         condition: on-failure
         delay: 5s
@@ -28,5 +32,8 @@ services:
         limits:
           cpus: '0.50'
           memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
       endpoint_mode: vip
 networks: {}
